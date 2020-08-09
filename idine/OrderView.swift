@@ -33,6 +33,7 @@ struct OrderView : View {
                         Text("Place Order")
                     }
                 }
+                // disable view on boolean condition
                 .disabled(order.items.isEmpty)
             }
             .navigationBarTitle("Order")
