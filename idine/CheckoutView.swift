@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CheckoutView: View {
+    // state of view
     @EnvironmentObject var order: Order
     static let tipAmounts = [10, 15, 20, 25, 0]
     static let paymentTypes = ["Cash", "Credit Card", "iDine Points"]
@@ -17,6 +18,8 @@ struct CheckoutView: View {
     @State private var tipAmount = 1
     @State private var showingPaymentAlert = false
     
+    
+    // computed properties for calculate total prices
     var totalPrice: Double {
         let total = Double(order.total)
         let tipValue = total / 100 * Double(Self.tipAmounts[tipAmount])
@@ -31,6 +34,8 @@ struct CheckoutView: View {
                         Text(Self.paymentTypes[$0])
                     }
                 }
+                
+                // animaltion() use for binding value change
                 Toggle(isOn: $addLoyaltyDetails.animation()) {
                     Text("Add iDine loyalty card")
                 }
@@ -46,7 +51,8 @@ struct CheckoutView: View {
                     ForEach(0 ..< Self.tipAmounts.count) {
                         Text("\(Self.tipAmounts[$0])%")
                     }
-                }.pickerStyle(SegmentedPickerStyle())
+                    
+                }.pickerStyle(SegmentedPickerStyle()) // segment style
             }
             
             Section(header:
@@ -66,8 +72,8 @@ struct CheckoutView: View {
     }
 }
 
-struct CheckoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckoutView()
-    }
-}
+//struct CheckoutView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CheckoutView()
+//    }
+//}

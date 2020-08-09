@@ -10,6 +10,7 @@ import SwiftUI
 struct OrderView : View {
     @EnvironmentObject var order: Order
 
+    // method have params IndexSet of onDelete modifiers
     func deleteItems(at offsets: IndexSet) {
         order.items.remove(atOffsets: offsets)
     }
@@ -41,8 +42,8 @@ struct OrderView : View {
     }
 }
 
-struct OrderView_Previews: PreviewProvider {
-    static var previews: some View {
-        OrderView()
-    }
-}
+//struct OrderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OrderView()
+//    }
+//}

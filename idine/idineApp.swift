@@ -11,6 +11,7 @@ import SwiftUI
 struct idineApp: App {
     var body: some Scene {
         WindowGroup {
+            // use Order observable for some view listen
             AppView().environmentObject(Order())
         }
     }

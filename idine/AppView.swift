@@ -10,6 +10,7 @@ import SwiftUI
 struct AppView: View {
     var body: some View {
         TabView {
+            // have 2 view
             ContentView()
                 .tabItem {
                     Image(systemName: "list.dash")

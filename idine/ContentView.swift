@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+//    load json in by bundle
     let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
     var body: some View {
         NavigationView{
@@ -26,8 +27,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
